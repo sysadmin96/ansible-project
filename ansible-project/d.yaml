@@ -1,0 +1,19 @@
+- name: create file 
+  hosts: all
+  vars:
+    user1: ahmed
+    user2: mohamed
+    user3: mostafa  
+  tasks:
+    - name: create user {{ user1 }}
+      user:
+        name: "{{ user1 }}"
+        state: touch 
+    - name: create user {{ user2 }}
+      user:
+        name: "{{ user2 }}"
+        state: present 
+    - name: create user {{ user3 }}
+      user:
+        name: "{{ user3 }}"
+        state: present      
